@@ -25,35 +25,33 @@ $fs = 0.4;
 // Quadlock Base
 //
 module quadlock_base() {
-    screw_shaft_diameter = 5;
+    screw_shaft_diameter = 5.5;
     inset_diameter = 14;
-    inset_depth = 1.5;
+    inset_depth = 2;
 
     gear_thickness = 1;
-    base_height = 2;
+    base_height = 6;
 
+    overlap_tolerance = 0.1;
 
     difference() {
         union() {
-            // 21.6 for the gear
             cylinder(d=24.5, h=base_height, center=true);
-            translate([0, 0, base_height - (gear_thickness / 2)]) {
+            translate([0, 0, (base_height / 2) + (gear_thickness / 2)]) {
                 color("red")
                 spur_gear(circ_pitch=1.7, teeth=36, thickness=gear_thickness, shaft_diam=6, pressure_angle=0, clearance=1);
             }   
         }
-
         // screw shaft
-        cylinder(d=screw_shaft_diameter, h=3, center=true, anchor=BOTTOM);
+        cylinder(d=screw_shaft_diameter, h=base_height + overlap_tolerance, center=true);
 
         // inset where the shoulder sits.
-        translate([0,0,base_height - (inset_depth / 2)]) {
+        inset_z = (base_height/2 + gear_thickness) - inset_depth / 2;
+        translate([0,0,inset_z]) {
             color("blue")
-            cylinder(d=inset_diameter, h=inset_depth + 0.1, center=true, anchor=BOTTOM);
+            cylinder(d=inset_diameter, h=inset_depth + overlap_tolerance, center=true);
         }
     }
-
-
 
 }
 
