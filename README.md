@@ -1,6 +1,6 @@
 # OpenSCAD Quad Lock 360 Base
 
-A base adapter for Quad Lock 360 mounting components. I had a project where I need
+A base adapter for [Quad Lock 360](https://www.quadlockcase.com) mounting components. I had a project where I need
 to create a base for a Quad Lock 360 MAG Wireless Charging Head. Not finding one in
 OpenSCAD, I put this together. The intention is for this component to be incorporated
 into your 3D models as needed.
