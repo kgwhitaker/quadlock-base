@@ -7,10 +7,6 @@
 include <BOSL2/std.scad>
 include <BOSL2/gears.scad>
 
-// OpenSCAD System Settings
-$fa = 1;
-$fs = 0.4;
-
 //
 // Base for the Quad Lock 360 accessories.
 //
@@ -48,5 +44,4 @@ module quadlock_base(base_height = 6, base_diameter = 24.5, screw_shaft_diameter
     }
 }
 
-quadlock_base(base_height=10, screw_shaft_diameter=5.5, base_diameter = 25);
  
