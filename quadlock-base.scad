@@ -44,4 +44,21 @@ module quadlock_base(base_height = 6, base_diameter = 24.5, screw_shaft_diameter
     }
 }
 
+//
+// BOSL2 *Attachable* Base for the Quad Lock 360 accessories.
+// See https://github.com/BelfrySCAD/BOSL2/wiki/attachments.scad for information on Attachments.
+//
+// Parameters:
+//
+// base_height = The height of the base below the locking gear.
+// base_diameter = The diameter of the base below the locking gear.
+// screw_shaft_diameter = Diameter of the screw shaft.
+//
+module attachable_quadlock_base(base_height = 6, base_diameter = 24.5, screw_shaft_diameter = 5.5) {
+    attachable(){
+        quadlock_base(base_height, base_diameter, screw_shaft_diameter);
+        children();
+    }
+}
+
  
