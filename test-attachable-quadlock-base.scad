@@ -1,5 +1,5 @@
 //
-// Instantiates a Quad Lock Base for testing.
+// Instantiates an *Attachable* Quad Lock Base for testing.
 //
 
 // The Belfry OpenScad Library, v2:  https://github.com/BelfrySCAD/BOSL2
